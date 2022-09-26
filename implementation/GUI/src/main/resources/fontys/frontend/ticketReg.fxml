@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" alignment="CENTER" maxHeight="500.0" maxWidth="650.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fontys.frontend.controllers.TicketController" stylesheets="@css/field-red-border.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <MenuBar maxWidth="933.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="933.0">
+            <VBox.margin>
+                <Insets bottom="50.0" left="-30.0" right="-20.0" top="-57.0" />
+            </VBox.margin>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox alignment="TOP_CENTER" prefHeight="350.0" prefWidth="600.0" spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label fx:id="titleText" alignment="TOP_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" text="Ticket for booking      " textAlignment="CENTER" textFill="#2945aa">
+                    <font>
+                        <Font name="Arial Bold" size="23.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="-50.0" />
+                    </VBox.margin>
+                </Label>
+                <Line endX="150.0" startX="-150.0" stroke="#2945aa">
+                    <VBox.margin>
+                        <Insets bottom="30.0" top="-30.0" />
+                    </VBox.margin>
+                </Line>
+                <GridPane prefHeight="274.0" prefWidth="570.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="278.60003662109375" minWidth="10.0" prefWidth="137.99996337890624" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="439.7999633789062" minWidth="10.0" prefWidth="403.0000366210937" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.39996337890625" minWidth="6.4001037597656705" prefWidth="29.60005493164067" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="36.60001220703125" minHeight="10.0" prefHeight="20.800018310546875" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="66.19998779296874" minHeight="10.0" prefHeight="36.799981689453126" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="66.19998779296874" minHeight="10.0" prefHeight="23.60001220703127" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="60.80002746582031" minHeight="10.0" prefHeight="30.999993896484384" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="53.199987792968756" minHeight="6.000018310546864" prefHeight="22.800006103515614" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.199987792968756" minHeight="10.0" prefHeight="30.79999389648438" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="18.0" prefWidth="117.0" text="Select flight number:" />
+                        <Label text="Select customer:" GridPane.rowIndex="2" />
+                        <Label text="Select class:" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="flightField" onAction="#pickFlight" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="customerField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="classField" onAction="#pickClass" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="flightLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="customerLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="classLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="(Optional) Add extras:" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="optionField" onAction="#pickExtra" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </children>
+                </GridPane>
+                <Line endX="250.0" startX="-250.0" stroke="#2945aa">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Line>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToView" text="Close">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <HBox.margin>
+                                <Insets right="120.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="storeButton" mnemonicParsing="false" onAction="#storeTicket" prefHeight="57.0" prefWidth="102.0" text="Store ticket">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <HBox.margin>
+                                <Insets left="280.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label fx:id="endLabel" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

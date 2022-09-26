@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import tornadofx.control.DateTimePicker?>
+<VBox fx:id="root" alignment="TOP_CENTER" prefHeight="450.0" prefWidth="900.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fontys.frontend.controllers.FlightController" stylesheets="@css/field-red-border.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <VBox.margin>
+            <Insets bottom="30.0"/>
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Button mnemonicParsing="false" onAction="#backToHub" text="-&gt; Officer Hub">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+        <Label alignment="TOP_LEFT" prefHeight="40.0" prefWidth="290.0" text="Flight creation form"
+               textAlignment="CENTER" textFill="#2945aa">
+            <font>
+                <Font name="Arial Bold" size="23.0"/>
+            </font>
+            <HBox.margin>
+                <Insets bottom="10.0" left="100.0"/>
+            </HBox.margin>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#viewFlights" text="View existing flights">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <HBox.margin>
+                <Insets left="30.0"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+    <Line endX="250.0" startX="-450.0" stroke="#2945aa">
+        <VBox.margin>
+            <Insets top="-30.0"/>
+        </VBox.margin>
+    </Line>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Label contentDisplay="RIGHT" text="Departure Date: " textFill="#2945aa">
+            <padding>
+                <Insets left="30.0" right="30.0"/>
+            </padding>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Label>
+        <DateTimePicker fx:id="departDatetime" nodeOrientation="LEFT_TO_RIGHT" format="dd/MM/yyyy HH:mm">
+            <HBox.margin>
+                <Insets right="30.0"/>
+            </HBox.margin>
+        </DateTimePicker>
+    </HBox>
+    <Line endX="250.0" layoutX="310.0" layoutY="196.0" startX="-250.0" stroke="#2945aa"/>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Label contentDisplay="RIGHT" text="Arrival Date:       " textFill="#2945aa">
+            <padding>
+                <Insets left="30.0" right="30.0"/>
+            </padding>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Label>
+        <DateTimePicker fx:id="arrivalDatetime" nodeOrientation="LEFT_TO_RIGHT" format="dd/MM/yyyy HH:mm">
+            <HBox.margin>
+                <Insets right="30.0"/>
+            </HBox.margin>
+        </DateTimePicker>
+    </HBox>
+    <Line endX="200.0" startX="-250.0" stroke="#2945aa">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+    </Line>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Label contentDisplay="RIGHT" text="Route: " textFill="#2945aa">
+            <HBox.margin>
+                <Insets left="30.0" right="30.0"/>
+            </HBox.margin>
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Label>
+        <ComboBox fx:id="departField" prefWidth="150.0" promptText="Departure" disable="true">
+            <HBox.margin>
+                <Insets right="25.0"/>
+            </HBox.margin>
+        </ComboBox>
+        <Line startY="-25.0" stroke="#2945aa"/>
+        <ComboBox fx:id="arriveField" prefWidth="150.0" promptText="Arival" disable="true">
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+        </ComboBox>
+    </HBox>
+    <Line endX="250.0" startX="-250.0" stroke="#2945aa"/>
+    <HBox prefHeight="100.0" prefWidth="560.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Label contentDisplay="RIGHT" text="Aircraft registration number:      " textFill="#2945aa">
+            <HBox.margin>
+                <Insets left="30.0" right="30.0"/>
+            </HBox.margin>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <graphic>
+                <ComboBox fx:id="planeField" prefWidth="150.0" promptText="Select Airplane"/>
+            </graphic>
+        </Label>
+    </HBox>
+    <Line endX="250.0" startX="-450.0" stroke="#2945aa">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+    </Line>
+    <HBox prefHeight="100.0" prefWidth="560.0">
+        <padding>
+            <Insets left="150.0"/>
+        </padding>
+        <Label contentDisplay="RIGHT" text="Enter base price:" textFill="#2945aa">
+            <HBox.margin>
+                <Insets left="30.0" right="30.0"/>
+            </HBox.margin>
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="priceField"/>
+    </HBox>
+    <Line endX="250.0" startX="-450.0" stroke="#2945aa"/>
+    <Button fx:id="submit" onAction="#storeFlight" prefHeight="63.0" prefWidth="335.0" text="Create Flight"
+            textFill="#2945aa">
+        <font>
+            <Font name="Arial" size="24.0"/>
+        </font>
+    </Button>
+    <Label fx:id="endLabel"/>
+</VBox>

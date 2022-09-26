@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fontys.frontend.controllers.ExistingTicketOptionsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <MenuBar maxWidth="933.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="933.0">
+        <VBox.margin>
+            <Insets bottom="50.0" left="-30.0" right="-20.0" top="-57.0" />
+        </VBox.margin>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Close" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About" />
+        </Menu>
+    </MenuBar>
+    <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="900.0" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <Label alignment="TOP_LEFT" prefHeight="27.0" prefWidth="390.0" text="List of all registered ticket options" textAlignment="CENTER" textFill="#2945aa">
+            <font>
+                <Font name="Arial Bold" size="23.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </Label>
+        <Line endX="150.0" startX="-150.0" stroke="#2945aa">
+            <VBox.margin>
+                <Insets bottom="30.0" top="-30.0" />
+            </VBox.margin>
+        </Line>
+        <TextField fx:id="searchTerm" promptText="Search" />
+        <GridPane prefHeight="298.0" prefWidth="860.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="860.0" minWidth="10.0" prefWidth="739.99990234375" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="424.4000244140625" minWidth="0.0" prefWidth="120.80009765625005" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="table" prefHeight="164.0" prefWidth="598.0" />
+                <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#resetTicketOptions" prefHeight="26.0" prefWidth="66.0" text="Refresh" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                    <font>
+                        <Font size="8.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <Line endX="250.0" startX="-250.0" stroke="#2945aa">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Line>
+        <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#backToHub" prefHeight="27.0" prefWidth="150.0" text="-&gt; Employee Central Hub">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#addTicketOption" prefHeight="27.0" prefWidth="130.0" text="+ Add new option">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <HBox.margin>
+                    <Insets left="450.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
+</VBox>

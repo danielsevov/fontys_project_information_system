@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" maxHeight="500.0" maxWidth="650.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fontys.frontend.controllers.SinglePlaneController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <children>
+        <MenuBar maxWidth="933.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="933.0">
+            <VBox.margin>
+                <Insets bottom="50.0" left="-30.0" right="-20.0" top="-57.0"/>
+            </VBox.margin>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox alignment="TOP_CENTER" prefHeight="350.0" prefWidth="600.0" spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label fx:id="titleText" alignment="TOP_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" text="Airplane number :     " textAlignment="CENTER" textFill="#2945aa">
+                    <font>
+                        <Font name="Arial Bold" size="23.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="-50.0" />
+                    </VBox.margin>
+                </Label>
+                <Line endX="150.0" startX="-150.0" stroke="#2945aa">
+                    <VBox.margin>
+                        <Insets bottom="30.0" top="-30.0" />
+                    </VBox.margin>
+                </Line>
+            <GridPane prefHeight="236.0" prefWidth="860.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="192.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="173.5999755859375" minWidth="0.0" prefWidth="116.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="159.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="103.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="currentRegistrationNumber" alignment="CENTER" prefHeight="17.0" prefWidth="176.0" text="Airplane Registration Number:" textAlignment="CENTER" />
+                  <Label fx:id="currentMaximumCapacity" alignment="CENTER" layoutX="10.0" layoutY="25.0" text="Airplane Maximum Capacity:" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <TextField fx:id="newRegistrationNumber" onAction="#pickRegNumber" GridPane.columnIndex="3" />
+                  <TextField fx:id="newMaximumCapacity" onAction="#pickMaxCap" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" text="Edit: Registration Number:" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="165.0" text="Edit: Maximum Capacity:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+                <Line endX="250.0" startX="-250.0" stroke="#2945aa">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Line>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToView" text="Close">
+                          <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                          </padding>
+                     <HBox.margin>
+                        <Insets right="120.0" />
+                     </HBox.margin>
+                      </Button>
+                  <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#deletePlane" prefHeight="27.0" prefWidth="105.0" text="Delete Airplane" textAlignment="CENTER" textFill="RED">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="storeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#storeChanges" prefHeight="27.0" prefWidth="114.0" text="Store Changes">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="120.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="endLabel" />
+            </children>
+        </VBox>
+    </children>
+</VBox>

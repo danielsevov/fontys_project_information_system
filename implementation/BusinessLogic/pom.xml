@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>fontys</groupId>
+        <artifactId>AirlineInformationSystem</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>BusinessLogic</artifactId>
+    <packaging>jar</packaging>
+    <properties>
+        <surefire.opens>
+            --add-opens businesslogic_module/helpers.ranges=ALL-UNNAMED
+            --add-exports businesslogic_module/helpers.ranges=ALL-UNNAMED
+            --add-opens businesslogic_module/businesslogic.bulkvalidator=ALL-UNNAMED
+            --add-exports businesslogic_module/businesslogic.bulkvalidator=ALL-UNNAMED
+            --add-opens businesslogic_module/businesslogic.validation=ALL-UNNAMED
+            --add-exports businesslogic_module/businesslogic.validation=ALL-UNNAMED
+            --add-opens businesslogic_module/businesslogic=ALL-UNNAMED
+            --add-exports businesslogic_module/businesslogic=ALL-UNNAMED
+        </surefire.opens>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>fontys</groupId>
+            <artifactId>Persistence</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>fontys</groupId>
+                    <artifactId>BusinessLogicAPI</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>fontys</groupId>
+            <artifactId>BusinessEntitiesAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <!-- Nils: Both of these are needed when spying on stdlib classes like a HashMap.
+        This is because older versions of mockito still use Method.isAccessible,
+        which throws an illegal reflection exception upon invocation.
+        -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.10.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>3.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
